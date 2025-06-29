@@ -1,0 +1,290 @@
+[
+  {
+    "title": "Mariposas Negras",
+    "direction": "David Baute",
+    "release_year": 2024,
+    "genre": ["animación", "drama", "drama social"],
+    "country": "España",
+    "duration": 78
+  },
+  {
+    "title": "Carta de amor",
+    "direction": "Kinuyo Tanaka",
+    "release_year": 1953,
+    "genre": ["romance", "drama"],
+    "country": "Japón",
+    "duration": 98
+  },
+  {
+    "title": "La gran belleza",
+    "direction": "Paolo Sorrentino",
+    "release_year": 2013,
+    "genre": ["comedia", "drama"],
+    "country": "Italia",
+    "duration": 142
+  },
+  {
+    "title": "Lost in Translation",
+    "direction": "Sofia Coppola",
+    "release_year": 2003,
+    "genre": ["comedia", "drama"],
+    "country": "Estados Unidos",
+    "duration": 105
+  },
+  {
+    "title": "Deseando amar",
+    "direction": "Wong Kar-Wai",
+    "release_year": 2000,
+    "genre": ["drama", "romance"],
+    "country": "Hong Kong",
+    "duration": 95
+  },
+  {
+    "title": "Alcarràs",
+    "direction": "Carla Simón",
+    "release_year": 2022,
+    "genre": ["drama", "familiar", "vida rural"],
+    "country": "España",
+    "duration": 120
+  },
+  {
+    "title": "Uno de los nuestros",
+    "direction": "Martin Scorsese",
+    "release_year": 1990,
+    "genre": ["crimen", "drama"],
+    "country": "Estados Unidos",
+    "duration": 146
+  },
+  {
+    "title": "Los viajeros de la noche",
+    "direction": "Kathryn Bigelow",
+    "release_year": 1987,
+    "genre": ["terror", "western", "romance"],
+    "country": "Estados Unidos",
+    "duration": 94
+  },
+  {
+    "title": "Paris, Texas",
+    "direction": "Wim Wenders",
+    "release_year": 1984,
+    "genre": ["drama", "road movie"],
+    "country": "Alemania Occidental",
+    "duration": 144
+  },
+  {
+    "title": "Annie Hall",
+    "direction": "Woody Allen",
+    "release_year": 1977,
+    "genre": ["comedia", "romance"],
+    "country": "Estados Unidos",
+    "duration": 94
+  },
+  {
+    "title": "Los destellos",
+    "direction": "Pilar Palomero",
+    "release_year": 2024,
+    "genre": ["drama"],
+    "country": "España",
+    "duration": 101
+  },
+  {
+    "title": "Harakiri",
+    "direction": "Masaki Kobayashi",
+    "release_year": 1962,
+    "genre": ["drama", "samurái"],
+    "country": "Japón",
+    "duration": 133
+  },
+  {
+    "title": "As bestas",
+    "direction": "Rodrigo Sorogoyen",
+    "release_year": 2022,
+    "genre": ["thriller", "drama"],
+    "country": "España",
+    "duration": 137
+  },
+  {
+    "title": "Pasqualino: Siete bellezas",
+    "direction": "Lina Wertmüller",
+    "release_year": 1975,
+    "genre": ["drama", "comedia", "comedia negra", "guerra"],
+    "country": "Italia",
+    "duration": 115
+  },
+  {
+    "title": "Parásitos",
+    "direction": "Bong Joon-ho",
+    "release_year": 2019,
+    "genre": ["drama", "thriller"],
+    "country": "Corea del Sur",
+    "duration": 132
+  },
+  {
+    "title": "Lady Bird",
+    "direction": "Greta Gerwig",
+    "release_year": 2017,
+    "genre": ["drama", "comedia"],
+    "country": "Estados Unidos",
+    "duration": 94
+  },
+  {
+    "title": "El Gran Hotel Budapest",
+    "direction": "Wes Anderson",
+    "release_year": 2014,
+    "genre": ["comedia", "aventura"],
+    "country": "Estados Unidos",
+    "duration": 99
+  },
+  {
+    "title": "El crimen de Cuenca",
+    "direction": "Pilar Miró",
+    "release_year": 1980,
+    "genre": ["drama", "histórico", "judicial"],
+    "country": "España",
+    "duration": 92
+  },
+  {
+    "title": "Nader y Simin, una separación",
+    "direction": "Asghar Farhadi",
+    "release_year": 2011,
+    "genre": ["drama"],
+    "country": "Irán",
+    "duration": 123
+  },
+  {
+    "title": "Un amor",
+    "direction": "Isabel Coixet",
+    "release_year": 2023,
+    "genre": ["drama", "romance"],
+    "country": "España",
+    "duration": 129
+  },
+  {
+    "title": "Antes del atardecer",
+    "direction": "Richard Linklater",
+    "release_year": 2004,
+    "genre": ["drama", "romance"],
+    "country": "Estados Unidos",
+    "duration": 80
+  },
+  {
+    "title": "Maixabel",
+    "direction": "Icíar Bollaín",
+    "release_year": 2021,
+    "genre": ["drama", "política", "biográfico"],
+    "country": "España",
+    "duration": 115
+  },
+  {
+    "title": "Antes del anochecer",
+    "direction": "Richard Linklater",
+    "release_year": 2013,
+    "genre": ["drama", "romance"],
+    "country": "Estados Unidos",
+    "duration": 108
+  },
+  {
+    "title": "Cléo de 5 a 7",
+    "direction": "Agnès Varda",
+    "release_year": 1962,
+    "genre": ["drama", "nouvelle vague"],
+    "country": "Francia",
+    "duration": 90
+  },
+  {
+    "title": "Antes del amanecer",
+    "direction": "Richard Linklater",
+    "release_year": 1995,
+    "genre": ["drama", "romance"],
+    "country": "Estados Unidos",
+    "duration": 101
+  },
+  {
+    "title": "The Rider",
+    "direction": "Chloé Zhao",
+    "release_year": 2017,
+    "genre": ["drama", "western"],
+    "country": "Estados Unidos",
+    "duration": 105
+  },
+  {
+    "title": "Ciudad de Dios",
+    "direction": "Fernando Meirelles",
+    "release_year": 2002,
+    "genre": ["crimen", "drama"],
+    "country": "Brasil",
+    "duration": 130
+  },
+  {
+    "title": "Mulholland Drive",
+    "direction": "David Lynch",
+    "release_year": 2001,
+    "genre": ["misterio", "drama"],
+    "country": "Estados Unidos",
+    "duration": 147
+  },
+  {
+    "title": "El bígamo",
+    "direction": "Ida Lupino",
+    "release_year": 1953,
+    "genre": ["drama"],
+    "country": "Estados Unidos",
+    "duration": 79
+  },
+  {
+    "title": "El hombre de más",
+    "direction": "Paolo Sorrentino",
+    "release_year": 2001,
+    "genre": ["drama"],
+    "country": "Italia",
+    "duration": 100
+  },
+  {
+    "title": "El poder del perro",
+    "direction": "Jane Campion",
+    "release_year": 2021,
+    "genre": ["western", "drama", "drama psicológico", "romance"],
+    "country": "Australia",
+    "duration": 126
+  },
+  {
+    "title": "El viaje de Chihiro",
+    "direction": "Hayao Miyazaki",
+    "release_year": 2001,
+    "genre": ["animación", "fantasía"],
+    "country": "Japón",
+    "duration": 125
+  },
+  {
+    "title": "La noche de las mujeres",
+    "direction": "Kinuyo Tanaka",
+    "release_year": 1961,
+    "genre": ["drama", "prostitución"],
+    "country": "Japón",
+    "duration": 93
+  },
+  {
+    "title": "El ángel exterminador",
+    "direction": "Luis Buñuel",
+    "release_year": 1962,
+    "genre": ["drama", "fantasía"],
+    "country": "México",
+    "duration": 95
+  },
+  {
+    "title": "Hard, Fast and Beautiful",
+    "direction": "Ida Lupino",
+    "release_year": 1951,
+    "genre": ["drama", "deporte"],
+    "country": "Estados Unidos",
+    "duration": 78
+  },
+  {
+    "title": "El cuchillo en el agua",
+    "direction": "Roman Polanski",
+    "release_year": 1962,
+    "genre": ["thriller", "drama"],
+    "country": "Polonia",
+    "duration": 94
+  }
+]

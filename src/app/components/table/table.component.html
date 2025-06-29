@@ -1,0 +1,50 @@
+<div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- Título Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Título</th>
+        <td mat-cell *matCellDef="let element"> {{element.title }} </td>
+      </ng-container>
+      <!-- Director/a Column -->
+      <ng-container matColumnDef="direction">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Director/a</th>
+        <td mat-cell *matCellDef="let element"> {{element.direction }} </td>
+      </ng-container>
+      <!-- Año Column -->
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Año</th>
+        <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+      </ng-container>
+      <!-- Géneros Column -->
+      <ng-container matColumnDef="genre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Géneros</th>
+        <td mat-cell *matCellDef="let element"> {{element.genre?.join(', ')}} </td>
+      </ng-container>
+      <!-- País Column -->
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>País</th>
+        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+      </ng-container>
+      <!-- Duración Column -->
+      <ng-container matColumnDef="duration">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Duración</th>
+        <td mat-cell *matCellDef="let element"> {{element.duration + " mins."}} </td>
+      </ng-container>
+      <!-- Acción Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Acción</th>
+        <td mat-cell *matCellDef="let element"> 
+          <button mat-icon-button class="view-button" aria-label="view movie">
+            <mat-icon (click)="viewMovie(element)">remove_red_eye</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- Pagination -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

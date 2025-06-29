@@ -1,0 +1,70 @@
+<h2 mat-dialog-title>Añadir nueva película</h2>
+
+<mat-dialog-content>
+  <p>Rellena el formulario para crear una nueva película</p>
+  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" class="movie-form">
+
+    <!-- Título form field -->
+    <mat-form-field appearance="outline" class="full-width form-field form-field">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title" required>
+    </mat-form-field>
+    <div *ngIf="movieForm.get('title')?.touched && movieForm.get('title')?.invalid">
+    El Título es obligatorio
+    </div>
+    <!-- Director/a form field -->
+    <mat-form-field appearance="outline" class="full-width form-field">
+        <mat-label>Director/a</mat-label>
+        <input matInput formControlName="direction">
+    </mat-form-field>
+    <div *ngIf="movieForm.get('direction')?.touched && movieForm.get('direction')?.invalid">
+    El Director/a es obligatorio
+    </div>
+    <!-- Año form field -->
+    <mat-form-field appearance="outline" class="full-width form-field">
+        <mat-label>Año</mat-label>
+        <input matInput type="number" formControlName="year" required>
+    </mat-form-field>
+    <div *ngIf="movieForm.get('year')?.touched && movieForm.get('year')?.invalid">
+    El Año es obligatorio
+    </div>
+    <!-- Géneros form field -->
+    <mat-form-field appearance="outline" class="full-width form-field">
+        <mat-label>Géneros</mat-label>
+        <mat-select formControlName="genre" multiple>
+        <mat-option *ngFor="let g of genres" [value]="g">{{ g }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div *ngIf="movieForm.get('genre')?.touched && movieForm.get('genre')?.invalid">
+    Los Géneros son obligatorios
+    </div>
+    <!-- País form field -->
+    <mat-form-field appearance="outline" class="full-width form-field">
+        <mat-label>País</mat-label>
+        <input matInput formControlName="country">
+    </mat-form-field>
+    <div *ngIf="movieForm.get('country')?.touched && movieForm.get('country')?.invalid">
+    El País es obligatorio
+    </div>
+    <!-- Duración form field -->
+    <mat-form-field appearance="outline" class="full-width form-field">
+        <mat-label>Duración (minutos)</mat-label>
+        <input matInput type="number" formControlName="duration" required>
+    </mat-form-field>
+    <div *ngIf="movieForm.get('duration')?.touched && movieForm.get('duration')?.invalid">
+    La Duración es obligatoria
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+ 
+    <!-- Cancel button -->
+    <button mat-button class="cancel-button" (click)="cancelButton()">Cancelar</button>
+    <!-- Create button -->
+    <button mat-button class="create-button" type="submit" cdkFocusInitial
+    [class.disabled]="movieForm.invalid"
+    (click)="checkFormValidity(); onSubmit()">
+        Crear </button>
+</mat-dialog-actions>
+
+

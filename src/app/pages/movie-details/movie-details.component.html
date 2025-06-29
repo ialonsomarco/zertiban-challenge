@@ -1,0 +1,18 @@
+ <button mat-button class="back-button" (click)="goBackToMovies()">
+    <mat-icon >arrow_back</mat-icon>
+    Volver a Películas
+</button>
+<ng-container *ngIf="movie; else loading">
+  <div>
+    <h1>{{ movie.title }}</h1>
+    <p>Director/a: {{ movie.direction }}</p>
+    <p>Año: {{ movie.year }}</p>
+    <p>Géneros: {{ movie.genre }}</p>
+    <p>País: {{ movie.country }}</p>
+    <p>Duración: {{ movie.duration }} minutos</p>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <p>Cargando...</p>
+</ng-template>
