@@ -1,18 +1,34 @@
- <button mat-button class="back-button" (click)="goBackToMovies()">
-    <mat-icon >arrow_back</mat-icon>
-    Volver a Películas
-</button>
-<ng-container *ngIf="movie; else loading">
-  <div>
-    <h1>{{ movie.title }}</h1>
-    <p>Director/a: {{ movie.direction }}</p>
-    <p>Año: {{ movie.year }}</p>
-    <p>Géneros: {{ movie.genre }}</p>
-    <p>País: {{ movie.country }}</p>
-    <p>Duración: {{ movie.duration }} minutos</p>
-  </div>
-</ng-container>
+ <header>
+  <h1 class="home-title">Información Individual de la Película</h1>
+</header>
+<body>
+  <mat-card class="container">
 
-<ng-template #loading>
-  <p>Cargando...</p>
-</ng-template>
+      <!-- Card Header -->
+      <div class="header-div" *ngIf="movie">
+        <h4>{{ movie.title }}</h4>
+      </div>
+
+      <!-- Card Content -->
+      <mat-card-content class="movie-details-content">
+        <button mat-button class="back-button" (click)="goBackToMovies()">
+            <mat-icon >arrow_back</mat-icon>
+            Volver a Películas
+        </button>
+        <ng-container *ngIf="movie; else loading">
+        <div>
+            <p><strong>Director/a:</strong> {{ movie.direction }}</p>
+            <p><strong>Año:</strong> {{ movie.year }}</p>
+            <p><strong>Géneros:</strong> {{ movie.genre?.join(', ') }}</p>
+            <p><strong>País:</strong> {{ movie.country }}</p>
+            <p><strong>Duración:</strong> {{ movie.duration }} minutos</p>
+        </div>
+        </ng-container>
+
+        <ng-template #loading>
+        <p>Cargando...</p>
+        </ng-template>
+      </mat-card-content>
+  </mat-card>
+   
+</body>

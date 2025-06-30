@@ -9,24 +9,31 @@
         <mat-label>Título</mat-label>
         <input matInput formControlName="title" required>
     </mat-form-field>
-    <div *ngIf="movieForm.get('title')?.touched && movieForm.get('title')?.invalid">
-    El Título es obligatorio
+    <!-- Título form invalid error messages -->
+    <div *ngIf="movieForm.get('title')?.touched && movieForm.get('title')?.invalid" class="error-message">
+        <small *ngIf="movieForm.get('title')?.errors?.['required']">El Título es obligatorio.</small>
+        <small *ngIf="movieForm.get('title')?.errors?.['pattern']">Formato de título no válido.</small>
     </div>
-    <!-- Director/a form field -->
+    <!-- El/la Director/a form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>Director/a</mat-label>
         <input matInput formControlName="direction">
     </mat-form-field>
-    <div *ngIf="movieForm.get('direction')?.touched && movieForm.get('direction')?.invalid">
-    El Director/a es obligatorio
+    <!--  El/la Director/a form invalid error messages -->
+    <div *ngIf="movieForm.get('direction')?.touched && movieForm.get('direction')?.invalid" class="error-message">
+        <small *ngIf="movieForm.get('direction')?.errors?.['required']">El/la Director/a es obligatorio/a.</small>
+        <small *ngIf="movieForm.get('direction')?.errors?.['pattern']">Solo se permiten letras y espacios.</small>
     </div>
     <!-- Año form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>Año</mat-label>
         <input matInput type="number" formControlName="year" required>
     </mat-form-field>
-    <div *ngIf="movieForm.get('year')?.touched && movieForm.get('year')?.invalid">
-    El Año es obligatorio
+    <!-- Año form invalid error messages -->
+    <div *ngIf="movieForm.get('year')?.touched && movieForm.get('year')?.invalid" class="error-message">
+        <small *ngIf="movieForm.get('year')?.errors?.['required']">El año es obligatorio.</small>
+        <small *ngIf="movieForm.get('year')?.errors?.['min']">El año no puede ser anterior a 1888.</small>
+        <small *ngIf="movieForm.get('year')?.errors?.['max']">El año no puede ser posterior al actual.</small>
     </div>
     <!-- Géneros form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
@@ -35,24 +42,29 @@
         <mat-option *ngFor="let g of genres" [value]="g">{{ g }}</mat-option>
         </mat-select>
     </mat-form-field>
-    <div *ngIf="movieForm.get('genre')?.touched && movieForm.get('genre')?.invalid">
-    Los Géneros son obligatorios
+    <!-- Géneros form invalid error messages -->
+    <div *ngIf="movieForm.get('genre')?.touched && movieForm.get('genre')?.invalid" class="error-message">
+        <small *ngIf="movieForm.get('genre')?.errors?.['required']">Debes seleccionar al menos un género.</small>
     </div>
     <!-- País form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>País</mat-label>
         <input matInput formControlName="country">
     </mat-form-field>
-    <div *ngIf="movieForm.get('country')?.touched && movieForm.get('country')?.invalid">
-    El País es obligatorio
+    <!-- País form invalid error messages -->
+    <div *ngIf="movieForm.get('country')?.touched && movieForm.get('country')?.invalid" class="error-message">
+        <small *ngIf="movieForm.get('country')?.errors?.['required']">El país es obligatorio.</small>
+        <small *ngIf="movieForm.get('country')?.errors?.['pattern']">Solo se permiten letras y espacios.</small>
     </div>
     <!-- Duración form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>Duración (minutos)</mat-label>
         <input matInput type="number" formControlName="duration" required>
     </mat-form-field>
-    <div *ngIf="movieForm.get('duration')?.touched && movieForm.get('duration')?.invalid">
-    La Duración es obligatoria
+    <!-- Duración form invalid error messages -->
+    <div *ngIf="movieForm.get('duration')?.touched && movieForm.get('duration')?.invalid" class="error-message">
+        <small *ngIf="movieForm.get('duration')?.errors?.['required']">La duración es obligatoria.</small>
+        <small *ngIf="movieForm.get('duration')?.errors?.['min']">La duración debe ser mayor que 0.</small>
     </div>
   </form>
 </mat-dialog-content>

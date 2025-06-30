@@ -9,43 +9,49 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-
-table th, table td {
-  text-align: left;
-  padding: 10px;
-  border-bottom: 1px solid #DBE1E6;
+.table-container {
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 10px;
 }
-
+table th, table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #DBE1E6;
+  }
+  
 // Table Header
 table th {
-  background: #255E87;
-
+  background-color: #255E8726;
   font-weight: 500;
-  color: #FFF;;
+  color: #3A4752;
 }
 // Table Body
 table td {
-  font-family: Poppins;
   font-size: 15px;
   font-weight: 400;
   line-height: 22.5px;
   text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color:#3A4752;
-
 }
 // Table Row, mause hover
 table tr:hover {
   background-color: #f1f1f1;
 }
-table tr:nth-child(even) {
-  background-color: #EFEFEF;
+// Table Row, mause hover
+table tr:hover {
+  background-color: #f1f1f1;
+}
+// table tr:nth-child(even) {
+//   background-color: #EFEFEF;
+// }
+::ng-deep .mat-sort-header-arrow {
+  color: #3A4752 !important;
 }
 // Table, view button
 .view-button {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #255E87
+  color: #3A4EF5;
 }

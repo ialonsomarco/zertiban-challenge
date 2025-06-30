@@ -27,13 +27,33 @@ import { Movie } from '../../models/movies.model';
 export class NewMovieModalComponent {
   // Define the form group for the movie form
   movieForm = new FormGroup({
-    title: new FormControl('', [Validators.required]),
-    country: new FormControl('', [Validators.required]),
-    direction: new FormControl('', [Validators.required]),
-    duration: new FormControl(null, [Validators.required, Validators.min(1)]),
-    genre: new FormControl<string[]>([], [Validators.required]),
-    year: new FormControl(null, [Validators.required, Validators.max(new Date().getFullYear())])
+    title: new FormControl('', [
+      Validators.required,
+      Validators.pattern(/^[\w\s.,!?"'():-]+$/) // Letters, numbers, punctuation
+    ]),
+    country: new FormControl('', [
+      Validators.required,
+      Validators.pattern(/^[A-Za-zÀ-ÿ\s'-]+$/) // Letters and accents
+    ]),
+    direction: new FormControl('', [
+      Validators.required,
+      Validators.pattern(/^[A-Za-zÀ-ÿ\s'-]+$/) // Letters and accents
+    ]),
+    duration: new FormControl<number | null>(null, [
+      Validators.required,
+      Validators.min(1)
+    ]),
+    genre: new FormControl<string[]>([], [
+      Validators.required,
+      Validators.minLength(1)
+    ]),
+    year: new FormControl<number | null>(null, [
+      Validators.required,
+      Validators.min(1888), // Year of the first film
+      Validators.max(new Date().getFullYear())
+    ])
   });
+
 
   genres: string[] = [
   "animación",

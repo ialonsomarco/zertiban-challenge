@@ -4,12 +4,14 @@ import { Movie } from '../../models/movies.model';
 import { ApiService } from '../../api/api.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-movie-details',
   imports: [
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.scss'

@@ -1,65 +1,67 @@
+
+header {
+  padding: 10px 20px;
+  background: #dfdfdfce !important;
+  color: #444;
+}
+
+body {
+  padding: 0 20px;
+  background: #dfdfdfce !important;
+}
 .home-container {
-    // width: 100%;
     padding: 20px;
-    // border-radius: 5px;
-    // background: #FFF;
-    // background: #FFF;
-    // margin-top: 20px;
+}
+.container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.10), 0px 3px 4px 0px rgba(0, 0, 0, 0.03);
+  padding: 0px;
+  max-width: 100% !important;
+}
+
+.header {
+  align-items: center;
+}
+.header-div {
+  border-radius: 10px 10px 0px 0px;
+  background: #3A4EF5;
+  padding: 0px 30px;
+  color: #FFF;
 }
 .search-engine, .new-movie {
   width: 50%;
-  padding: 20px 0px;
 }
 .new-movie {
   float: right;
 }
 .search-input {
-    color: #99ABB4;
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
-    border: 1px solid var(--grey-colors-border, #DBE1E6);
-  }
+  color: #99ABB4;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  border: 1px solid #DBE1E6;
+}
   
 .search-input::placeholder {
-    color: #99ABB4;
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
+  color: #99ABB4;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
 }
 .search-icon {
-    color: #99ABB4;
+  color: #99ABB4;
 }
 .search-field {
-    width: 512px;
-    border-radius: 6px;
-    background: #FFF;
+  width: 512px;
+  border-radius: 6px;
+  background: #FFF;
 
 }
-// ::ng-deep mat-form-field {
-//     height: 35px;
-//   }
-  
-// ::ng-deep mat-form-field .mat-mdc-text-field-wrapper {
-//   height: 35px;
-//   display: flex;
-//   align-items: center;
-// }
-
-// ::ng-deep mat-form-field input {
-//   height: 35px;
-// }
-// // Change the color of the placeholder text
-// ::ng-deep .custom-search-field input::placeholder {
-//   color: #99ABB4 !important;
-//   opacity: 1;
-// }
 
 .movie-button {
   border-radius: 8px !important;
-  background: #255E87;
+  background: #3A4EF5;
   color: #FFF !important;
   padding: 0 16px;
   font-size: 15px !important;

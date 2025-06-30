@@ -8,6 +8,7 @@ import { NewMovieModalComponent } from '../../components/new-movie-modal/new-mov
 import { MatDialog } from '@angular/material/dialog';
 import { Movie } from '../../models/movies.model';
 import { ApiService } from '../../api/api.service';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { ApiService } from '../../api/api.service';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -26,6 +28,8 @@ import { ApiService } from '../../api/api.service';
 export class HomeComponent implements OnInit {
 
   moviesData: Movie[] = [];
+  originalMoviesData: Movie[] = [];
+
   constructor(
     private apiService: ApiService,
     private dialogModel: MatDialog,
@@ -39,11 +43,20 @@ export class HomeComponent implements OnInit {
 
   }
 
+  /**
+   * Method to load movie data from localStorage or API
+   * It checks if movie data is available in localStorage.
+   * If available, it parses the data and assigns it to the movie data.
+   * If not available, it fetches the data from the API, maps it to the Movie model,
+   * and assigns it to the movie data. Finally, it stores the fetched data
+   * in localStorage for future use.
+   */
   loadData() {
     var moviesDataLS = localStorage.getItem('movies');
     // If data exists, parse it and assign it to the movie data
     if (moviesDataLS) {
       this.moviesData = JSON.parse(moviesDataLS) as Movie[];
+      this.originalMoviesData = JSON.parse(moviesDataLS) as Movie[];
       this.cdrMovies.detectChanges();
     } else {
       // If no data in localStorage, fetch it from the API
@@ -63,6 +76,7 @@ export class HomeComponent implements OnInit {
         });
         
         // Assign the fetched data to the movie data
+        this.originalMoviesData = movies as Movie[];
         this.moviesData = movies as Movie[];
         this.cdrMovies.detectChanges();
         
@@ -74,7 +88,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // Methodto open a modal dialog for creating a new movie
+  /**
+   * Method to open a modal dialog for creating a new movie
+   */
   newMovie() {
   const dialogRef = this.dialogModel.open(NewMovieModalComponent, {
     width: "740px",
@@ -88,17 +104,20 @@ export class HomeComponent implements OnInit {
 
     
   }
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filterPredicate = (data: Movie, filter: string) => {
-  //     return data.name.toLowerCase().includes(filter.toLowerCase());
-  //   };
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  /**
+   * Method to apply a filter to the movie list based on the input value
+   * @param event - The event triggered by the input field
+   */
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    // Filter the movies data based on the input value
+    this.moviesData = this.originalMoviesData.filter((item: { title: string; }) =>
+      item.title.toLowerCase().includes(filterValue.toLowerCase())
+    );
+    // Force change detection
+    this.cdrMovies.detectChanges();
 
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
+  }
 
 
 }
