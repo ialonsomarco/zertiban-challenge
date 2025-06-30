@@ -14,8 +14,6 @@ import { Router } from '@angular/router';
     MatSortModule,
     MatPaginatorModule,
     MatIconModule,
-    // CommonModule,
-    // TranslateModule
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
@@ -59,7 +57,10 @@ export class TableComponent implements OnInit {
     }
   }
 
-  // Function to visualize the movie details
+  /**
+   * Method to view movie details
+   * @param row The selected movie row
+   */
   viewMovie(row: Movie) {
     // Navigate to the movie with the selected movie's ID
     this.router.navigate(['/movie-details', row.id ]);

@@ -7,7 +7,7 @@
     <!-- Título form field -->
     <mat-form-field appearance="outline" class="full-width form-field form-field">
         <mat-label>Título</mat-label>
-        <input matInput formControlName="title" required>
+        <input matInput formControlName="title" aria-required="true" required aria-label="Título">
     </mat-form-field>
     <!-- Título form invalid error messages -->
     <div *ngIf="movieForm.get('title')?.touched && movieForm.get('title')?.invalid" class="error-message">
@@ -17,7 +17,7 @@
     <!-- El/la Director/a form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>Director/a</mat-label>
-        <input matInput formControlName="direction">
+        <input matInput formControlName="direction" aria-required="true" required aria-label="Director/a">
     </mat-form-field>
     <!--  El/la Director/a form invalid error messages -->
     <div *ngIf="movieForm.get('direction')?.touched && movieForm.get('direction')?.invalid" class="error-message">
@@ -27,7 +27,7 @@
     <!-- Año form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>Año</mat-label>
-        <input matInput type="number" formControlName="year" required>
+        <input matInput type="number" formControlName="year" aria-required="true" required aria-label="Año">
     </mat-form-field>
     <!-- Año form invalid error messages -->
     <div *ngIf="movieForm.get('year')?.touched && movieForm.get('year')?.invalid" class="error-message">
@@ -49,7 +49,7 @@
     <!-- País form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>País</mat-label>
-        <input matInput formControlName="country">
+        <input matInput formControlName="country" aria-required="true" required aria-label="Pais">
     </mat-form-field>
     <!-- País form invalid error messages -->
     <div *ngIf="movieForm.get('country')?.touched && movieForm.get('country')?.invalid" class="error-message">
@@ -59,7 +59,7 @@
     <!-- Duración form field -->
     <mat-form-field appearance="outline" class="full-width form-field">
         <mat-label>Duración (minutos)</mat-label>
-        <input matInput type="number" formControlName="duration" required>
+        <input matInput type="number" formControlName="duration" aria-required="true" aria-label="Duración en minutos" required>
     </mat-form-field>
     <!-- Duración form invalid error messages -->
     <div *ngIf="movieForm.get('duration')?.touched && movieForm.get('duration')?.invalid" class="error-message">

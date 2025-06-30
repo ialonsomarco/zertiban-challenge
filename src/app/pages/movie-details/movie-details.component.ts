@@ -37,51 +37,55 @@ export class MovieDetailsComponent implements OnInit {
     // and use it to fetch the movie details from the API service
     this._activatedRoute.params.subscribe(params => {
       this.movieId = params['id'];
-
-      // Check if movies data is already stored in localStorage
-      const moviesData = localStorage.getItem('movies');
-      // If data exists, parse it and assign it to the data source
-      if (moviesData) {
-        let movies: Movie[] = JSON.parse(moviesData);
-        // Find the movie with the matching ID and assign the found movie to the component's movie property
-        this.movie = movies.find(movie => movie.id === this.movieId);
-
-        this.cdrMovie.detectChanges();
-          
-      } else {
-        // If no data in localStorage, fetch it from the API
-        // this.loadData();
-      }
+      // Call the method to load data when the component initializes
+      this.loadData();
     });
 
   }
 
+  /**
+   * Method to load movie data from localStorage or API
+   * It checks if movie data is available in localStorage.
+   * If available, it parses the data and assigns it to the movie data.
+   * If not available, it fetches the data from the API, maps it to the Movie model,
+   * and assigns it to the movie data.
+   */
   loadData() {
-    // Fetch data from the API service
-    this.apiService.getData().subscribe((data) => {
-
-      // Map the received data to the Movie model
-      let movies: Movie[] = data.map((item: any) => {
-        return {
-          id: item.title.toLowerCase().replace(/\s+/g, '-'),
-          title: item.title,
-          country: item.country,
-          direction: item.direction,
-          duration: item.duration,
-          genre: item.genre,
-          year: item.release_year,
-        } as Movie;
-      });
-
+    var moviesDataLS = localStorage.getItem('movies');
+    // If data exists, parse it and assign it to the movie data
+    if (moviesDataLS) {
+      let movies: Movie[] = JSON.parse(moviesDataLS);
+      // Find the movie with the matching ID and assign the found movie to the component's movie property
       this.movie = movies.find(movie => movie.id === this.movieId);
       this.cdrMovie.detectChanges();
+    } else {
+      // If no data in localStorage, fetch it from the API
+      this.apiService.getData().subscribe((data) => {
 
-    });
+        // Map the received data to the Movie model
+        let movies: Movie[] = data.map((item: any) => {
+          return {
+            id: item.title.toLowerCase().replace(/\s+/g, '-'),
+            title: item.title,
+            country: item.country,
+            direction: item.direction,
+            duration: item.duration,
+            genre: item.genre,
+            year: item.release_year,
+          } as Movie;
+        });
+        
+        this.movie = movies.find(movie => movie.id === this.movieId);
+        this.cdrMovie.detectChanges();
+        
+      });
+    }
   }
 
   
-
-  // Function to navigate back to the movies list
+  /**
+   * Method to navigate back to the movies list
+   */
   goBackToMovies() {
     this.router.navigate(['/home']);
   }

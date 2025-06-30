@@ -109,11 +109,18 @@ export class HomeComponent implements OnInit {
    * @param event - The event triggered by the input field
    */
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    // Filter the movies data based on the input value
-    this.moviesData = this.originalMoviesData.filter((item: { title: string; }) =>
-      item.title.toLowerCase().includes(filterValue.toLowerCase())
-    );
+    const filterValue = (event.target as HTMLInputElement).value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, ''); // remove accents
+
+    this.moviesData = this.originalMoviesData.filter((item: { title: string }) => {
+      const normalizedTitle = item.title
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+      return normalizedTitle.includes(filterValue);
+    });
     // Force change detection
     this.cdrMovies.detectChanges();
 
